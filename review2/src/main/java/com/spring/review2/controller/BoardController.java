@@ -1,4 +1,4 @@
-package com.spring.review2.board;
+package com.spring.review2.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
