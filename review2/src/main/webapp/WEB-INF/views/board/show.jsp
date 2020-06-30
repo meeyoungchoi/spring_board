@@ -14,12 +14,12 @@
 <body>
 	<h1>게시글 개별 조회</h1>
 	
-	#번호: ${boardNum}<br>
+	#번호: ${board.boardNo}<br>
 	#작성자: ${board.userId}<br>
 	#제목: ${board.title}<br>
 	#내용: ${board.content}<br>
 
-	<a href="${path}/board/modify?boardNum=${boardNum}">수정하기</a>
+	<a href="${path}/board/modify?boardNo=${board.boardNo}">수정하기</a>
 	
 	
 	

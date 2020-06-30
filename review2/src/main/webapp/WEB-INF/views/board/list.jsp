@@ -15,11 +15,18 @@
 	<h1>게시글 목록</h1>
 	
 	<c:forEach var="b" items="${boards}" varStatus="boardNum">
-		#번호: ${boardNum.index+1}&nbsp;
+		#번호: ${b.boardNo}&nbsp;
 		#작성자:${b.userId}&nbsp;
-		#제목:  <a href="${path}/board/show?boardNum=${boardNum.index+1}">${b.title}</a>&nbsp;
-		<a href="${path}/board/delete?boardNum=${boardNum.index+1}">삭제</a><br>
+		#제목:  <a href="${path}/board/show?boardNo=${b.boardNo}">${b.title}</a>&nbsp;
+		<a href="${path}/board/delete?boardNo=${b.boardNo}">삭제</a><br>
 	</c:forEach>
+	
+	<form action="${path}/board/searchList" method="get">
+		검색: <input type="text" name="keyword">
+		<button>전송</button>
+	</form>
+	
+	
 	
 </body>
 </html>

@@ -14,7 +14,7 @@
 	<h1>게시글 수정</h1>
 	
 	<form method="post">
-		#글번호:<input type="hidden" readonly="readonly" name="boardNum" value="${boardNum}"><br>	
+		#글번호:<input type="hidden" readonly="readonly" name="boardNo" value="${board.boardNo}"><br>	
 		#작성자:<input type="text" readonly="readonly" name="userId" value="${board.userId}"><br>	
 		#제목:<input type="text" name="title" value="${board.title}"><br>	
 		#내용:<input type="text" name="content" value="${board.content}"><br>	

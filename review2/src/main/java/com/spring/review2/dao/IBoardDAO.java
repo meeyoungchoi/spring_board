@@ -11,7 +11,9 @@ public interface IBoardDAO {
 
 	BoardVO getOneBoard(int index);
 
-	BoardVO modify(int index, BoardVO board);
+	void modify(BoardVO board);
 
 	void delete(int index);
+	
+	List<BoardVO> getSearchList(String keyword);
 }

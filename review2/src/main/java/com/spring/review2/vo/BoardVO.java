@@ -1,10 +1,18 @@
 package com.spring.review2.vo;
 
 public class BoardVO {
+	private int boardNo;
 	private String userId;
 	private String title;
 	private String content;
 	
+	
+	public int getBoardNo() {
+		return boardNo;
+	}
+	public void setBoardNo(int boardNo) {
+		this.boardNo = boardNo;
+	}
 	public String getUserId() {
 		return userId;
 	}
@@ -26,9 +34,10 @@ public class BoardVO {
 	
 	@Override
 	public String toString() {
-		return "BoardVO [userId=" + userId + ", title=" + title + ", content=" + content + "]";
+		return "BoardVO [boardNo=" + boardNo + ", userId=" + userId + ", title=" + title + ", content=" + content + "]";
 	}
 	
+
 	
 	
 	

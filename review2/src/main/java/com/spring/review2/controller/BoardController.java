@@ -38,27 +38,34 @@ public class BoardController {
 	}
 	
 	@GetMapping("/show")
-	public void show(@ModelAttribute("boardNum") int boardNum , Model model) {
-		model.addAttribute("board", service.getOneBoard(boardNum));
+	public void show( int boardNo , Model model) {
+		model.addAttribute("board", service.getOneBoard(boardNo));
 	}
 	
 	@GetMapping("/modify")
-	public void modify(@ModelAttribute("boardNum") int boardNum, Model model) {
-		model.addAttribute("board",service.getOneBoard(boardNum));
+	public void modify(@ModelAttribute("boardNo") int boardNo, Model model) {
+		model.addAttribute("board",service.getOneBoard(boardNo));
 		
 	}
 	
 	@PostMapping("/modify")
-	public String update(@ModelAttribute("boardNum") int boardNum, Model model , BoardVO board) {
+	public String update(BoardVO board) {
 		
-		model.addAttribute("board", service.modify(boardNum, board));
-		return "redirect:/board/show";
+		service.modify(board);
+		return "redirect:/board/show?boardNo=" + board.getBoardNo();
 	}
 	
 	@GetMapping("/delete")
-	public String delete(int boardNum, Model model) {
-		service.delete(boardNum);
+	public String delete(int boardNo, Model model) {
+		service.delete(boardNo);
 		return "redirect:/board/list";
+	}
+	
+	@GetMapping("/searchList")
+	public String search(String keyword, Model model) {
+		System.out.println("/board/search: GET");
+		model.addAttribute("boards", service.getSearchList(keyword));
+		return "board/list";
 	}
 	
 	

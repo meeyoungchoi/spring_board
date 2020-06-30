@@ -28,18 +28,26 @@ public class BoardService implements IBoardService {
 
 	@Override
 	public BoardVO getOneBoard(int index) {
-		return dao.getOneBoard(index - 1);
+		return dao.getOneBoard(index);
 	}
 
-	@Override
-	public BoardVO modify(int index, BoardVO board) {
-		return dao.modify((index - 1), board);
-	}
-
+	
 	@Override
 	public void delete(int index) {
-		dao.delete(index - 1);
+		dao.delete(index);
 
+	}
+
+	@Override
+	public void modify(BoardVO board) {
+		dao.modify( board);
+		
+	}
+
+	@Override
+	public List<BoardVO> getSearchList(String keyword) {
+		keyword = "%" + keyword + "%";
+		return dao.getSearchList(keyword);
 	}
 
 }
